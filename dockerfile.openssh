@@ -1,0 +1,12 @@
+ARG BASE_IMAGE=witonai/ubuntu
+FROM ${BASE_IMAGE}
+
+LABEL maintainer="ENTNET"
+
+RUN apt-get update && \
+    apt-get install -y openssh-server && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN service ssh start
+
+EXPOSE 22
