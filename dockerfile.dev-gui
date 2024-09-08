@@ -1,0 +1,13 @@
+ARG BASE_IMAGE=witonai/x11-apps
+FROM ${BASE_IMAGE}
+
+LABEL maintainer="ENTNET"
+
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    git \
+    htop \
+    libgl1-mesa-dev \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
